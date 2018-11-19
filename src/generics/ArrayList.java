@@ -1,0 +1,33 @@
+package generics;
+import java.util.Arrays;
+
+public class ArrayList <E>{
+	private Object[] list;
+	private int next; // == 0 (default value)
+	
+	public ArrayList(int capacity) {
+		list = new Object[capacity];
+	}//set Object[] list length
+	
+	public ArrayList() {
+		this(16);
+	}//initial Object[] list length	(if you didn't set)
+	
+	public void add(E e) {
+		if(next == list.length) {
+			list = Arrays.copyOf(list, list.length*2);
+		}
+		list[next ++] = e;
+	}
+	
+	public E get(int index) {
+		return (E)list[index];
+	}
+	
+	public int size() {
+		for (int i = 0; i < list.length; i++) {
+			System.out.print(list[i]);
+		}
+		return next;
+	}
+}
