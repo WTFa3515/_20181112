@@ -47,8 +47,8 @@ public class CovarianceDemo {
 	private static void printlnForEach(Basket<? extends Fruit> basket) {
 		// TODO Auto-generated method stub
 		for(Fruit fruit : basket.things) {
-			System.out.printf("%s(%d, %d) ", fruit.getClass().getName(),
-					fruit.price, fruit.weight);
+			System.out.printf("%s(%d, %d) and %s", fruit.getClass().getName(),
+					fruit.price, fruit.weight, fruit.getClass());
 		}
 		System.out.println();
 	}
